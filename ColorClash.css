@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 100px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.head-section {
+    background: linear-gradient(
+        90deg,
+        rgb(255, 0, 0, 0.7),
+        rgb(255, 165, 0, 0.7),
+        rgb(255, 255, 0, 0.7),
+        rgb(0, 128, 0, 0.7),
+        rgb(0, 0, 255, 0.7),
+        rgb(75, 0, 130, 0.7),
+        rgb(148, 0, 211, 0.7)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0px;
+    gap: 10px;
+    backdrop-filter: blur(20px);
+    color: white;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.buttons-section {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    gap: 500px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.game-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 200px;
+    gap: 50px;
+    width: 700px;
+    color: white;
+}
+
+.assessment {
+    margin-bottom: 30px;
+    font-size: 25px;
+    color: white;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .buttons-section {
+        gap: 0;
+        justify-content: space-between;
+        padding: 0px 5px;
+        width: calc(100% - 10px);
+    }
+
+    .game-button {
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .square {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+    }
+    
+    .game-section {
+        gap: 15px;
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .game-button {
+        font-size: 15px;
+    }
+
+    .head-section {
+        font-size: 30px;
+    }
+
+    .buttons-section {
+        gap: 10px;
+    }
+}
