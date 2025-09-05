@@ -72,10 +72,23 @@ body {
     color: white;
 }
 
+.state-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .assessment {
-    margin-bottom: 30px;
     font-size: 25px;
     color: white;
+}
+
+.score-span {
+    color: white;
+    font-size: 20px;
 }
 
 .square {

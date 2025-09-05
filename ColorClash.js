@@ -1,5 +1,6 @@
 const game_section = document.querySelector('.game-section');
 const assessment = document.querySelector('.assessment');
+const score_num = document.querySelector('.score-num');
 const game_button = document.querySelectorAll('.game-button');
 const easy = document.querySelector('.easy');
 const mid = document.querySelector('.mid');
@@ -9,6 +10,8 @@ const red = document.querySelector('.red');
 const green = document.querySelector('.green');
 const blue = document.querySelector('.blue');
 
+let interval;
+let score = 0;
 let range = 50;
 let mode = Number(localStorage.getItem('mode')) || 1;
 
@@ -50,6 +53,7 @@ function GenerateColors(num, hard = false) {
 function NewRound() {
     game_section.innerHTML = '';
     assessment.textContent = '';
+    clearInterval(interval);
 
     let numColors = mode === 1 ? 3 : mode === 2 ? 6 : 3;
     let colors = GenerateColors(numColors, mode === 3);
@@ -72,7 +76,14 @@ function NewRound() {
 }
 
 function CheckGuess(color) {
-    if (color === correctColor) {assessment.textContent = 'Correct 🎉🥳';} 
+    if (color === correctColor) {
+        score++;
+        score_num.textContent = score;
+        assessment.textContent = 'Correct 🎉🥳';
+        interval = setTimeout(() => {
+            NewRound();
+        }, 2000);
+    } 
     else {assessment.textContent = 'Not correct 🥀';}
 }
 
