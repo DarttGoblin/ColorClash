@@ -10,6 +10,7 @@ const red = document.querySelector('.red');
 const green = document.querySelector('.green');
 const blue = document.querySelector('.blue');
 
+let wrong_guess;
 let interval;
 let score = 0;
 let range = 50;
@@ -53,6 +54,7 @@ function GenerateColors(num, hard = false) {
 function NewRound() {
     game_section.innerHTML = '';
     assessment.textContent = '';
+    wrong_guess = false;
     clearInterval(interval);
 
     let numColors = mode === 1 ? 3 : mode === 2 ? 6 : 3;
@@ -77,14 +79,19 @@ function NewRound() {
 
 function CheckGuess(color) {
     if (color === correctColor) {
-        score++;
-        score_num.textContent = score;
+        if (wrong_guess == false) {
+            score++;
+            score_num.textContent = score;
+        }
         assessment.textContent = 'Correct 🎉🥳';
         interval = setTimeout(() => {
             NewRound();
         }, 2000);
     } 
-    else {assessment.textContent = 'Not correct 🥀';}
+    else {
+        assessment.textContent = 'Not correct 🥀';
+        wrong_guess = true;
+    }
 }
 
 function ActiveMode() {
