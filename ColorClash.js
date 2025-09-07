@@ -13,7 +13,7 @@ const blue = document.querySelector('.blue');
 let wrong_guess;
 let interval;
 let score = 0;
-let range = 50;
+let range = 80;
 let mode = Number(localStorage.getItem('mode')) || 1;
 
 NewRound();
