@@ -33,6 +33,11 @@ body {
     font-weight: 600;
 }
 
+.info {
+    font-size: 20px;
+    color: rgb(200, 200, 200);
+}
+
 .buttons-section {
     margin-bottom: 20px;
     width: 100%;
